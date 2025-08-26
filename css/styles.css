@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+    height: 90%;
+    background-color: hsl(120deg, 100%, 50%);
+}
+
+h1 {
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffbb00
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logo-nav {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+#barra-busqueda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    margin: 0;
+}
+
+#menu-seleccion{
+    display: flex;
+    gap: 20px;
+}
+
+.elementos select {
+    background-color: #00000000;
+}
+
+#barra-busqueda input, select {
+    height: 30px;
+    border: none;
+    font-size: 0.9rem;
+}
+
+input:focus, select:focus {
+    outline: none;
+}
+
+#lupa-barra-busqueda {
+    width: 20px;
+    height: 20px;
+}
+
+#lupa-barra-busqueda:active {
+    background-color: red;
+}
