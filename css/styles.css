@@ -1,11 +1,5 @@
 * {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    margin: 0;
-    padding: 0;
 }
 
 main {
@@ -19,90 +13,4 @@ main {
 h1 {
     color: #fff;
     padding: 10px;
-}
-
-.cabecera > ul {
-    height: 50px;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffbb00
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-.logo-nav {
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-}
-
-.menu:hover {
-    cursor: pointer;
-}
-
-#barra-busqueda {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid #000;
-    margin: 0;
-}
-
-#barra-busqueda input, select {
-    height: 30px;
-    border: none;
-    font-size: 0.9rem;
-}
-
-input:focus, select:focus {
-    outline: none;
-}
-
-#lupa-barra-busqueda {
-    width: 20px;
-    height: 20px;
-}
-
-#lupa-barra-busqueda:active {
-    background-color: red;
-}
-
-/* ==== MENÚS DESPLEGABLES ==== */
-
-.menu {
-    height: inherit;
-    position: relative;
-    padding: 0 20px;
-    background-color: red;
-}
-
-.menu > a {
-    margin: auto;
-}
-
-.menu-desplegable {
-    display: none;
-    position: absolute;
-}
-
-.menu-desplegable > li {
-    padding: 10px;
-}
-
-li > a {
-    text-decoration: none;
-}
-
-.menu:hover .menu-desplegable {
-    display: block;
 }
