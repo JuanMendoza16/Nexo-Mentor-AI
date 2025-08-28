@@ -21,6 +21,10 @@ h1 {
     padding: 10px;
 }
 
+.cabecera > ul {
+    height: 50px;
+}
+
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -39,6 +43,10 @@ ul {
     padding: 10px;
 }
 
+.menu:hover {
+    cursor: pointer;
+}
+
 #barra-busqueda {
     display: flex;
     align-items: center;
@@ -48,15 +56,6 @@ ul {
     border-radius: 10px;
     border: 2px solid #000;
     margin: 0;
-}
-
-#menu-seleccion{
-    display: flex;
-    gap: 20px;
-}
-
-.elementos select {
-    background-color: #00000000;
 }
 
 #barra-busqueda input, select {
@@ -76,4 +75,34 @@ input:focus, select:focus {
 
 #lupa-barra-busqueda:active {
     background-color: red;
+}
+
+/* ==== MENÚS DESPLEGABLES ==== */
+
+.menu {
+    height: inherit;
+    position: relative;
+    padding: 0 20px;
+    background-color: red;
+}
+
+.menu > a {
+    margin: auto;
+}
+
+.menu-desplegable {
+    display: none;
+    position: absolute;
+}
+
+.menu-desplegable > li {
+    padding: 10px;
+}
+
+li > a {
+    text-decoration: none;
+}
+
+.menu:hover .menu-desplegable {
+    display: block;
 }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menú Desplegable con Hover</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Contenedor del menú */
+    nav {
+      background-color: #333;
+      width: 100%;
+    }
+
+    /* Lista principal del menú */
+    ul.menu {
+      list-style: none;
+      display: flex;
+    }
+
+    /* Items del menú */
+    ul.menu > li {
+      position: relative;
+    }
+
+    /* Links principales */
+    ul.menu > li > a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    ul.menu > li > a:hover {
+      background-color: #555;
+    }
+
+    /* Submenú oculto */
+    ul.submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #555;
+      min-width: 180px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+
+    /* Items del submenú */
+    ul.submenu li a {
+      color: white;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    ul.submenu li a:hover {
+      background-color: #777;
+    }
+
+    /* Mostrar submenú al hacer hover en el item padre */
+    ul.menu > li:hover > ul.submenu {
+      display: block;
+    }
+
+    /* Submenús anidados (opcional) */
+    ul.submenu li {
+      position: relative;
+    }
+    ul.submenu li:hover > ul.submenu {
+      display: block;
+      top: 0;
+      left: 100%;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="#">Servicios</a>
+        <ul class="submenu">
+          <li><a href="#servicio1">Servicio 1</a></li>
+          <li><a href="#servicio2">Servicio 2</a></li>
+          <li>
+            <a href="#">Más servicios</a>
+            <ul class="submenu">
+              <li><a href="otra-pagina.html">Otra Página</a></li>
+              <li><a href="#servicio3">Servicio 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#acerca-de">Acerca de</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="servicio1" style="margin:50px;">Contenido Servicio 1</section>
+  <section id="servicio2" style="margin:50px;">Contenido Servicio 2</section>
+  <section id="servicio3" style="margin:50px;">Contenido Servicio 3</section>
+  <section id="acerca-de" style="margin:50px;">Contenido Acerca de</section>
+</body>
+</html>
