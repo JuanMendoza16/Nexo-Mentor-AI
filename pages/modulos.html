@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Módulos - NexoMentorAI</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+        .accordion {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-header {
+            background-color: #ffbb00;
+            padding: 15px 20px;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .accordion-header:hover,
+        .accordion-header:focus,
+        .accordion-header.active {
+            background-color: #d6a500;
+            color: #fff;
+            outline: none;
+        }
+
+        .accordion-header::after {
+            content: "▼";
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .accordion-header.active::after {
+            transform: rotate(-180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            background-color: #fafafa;
+            transition: max-height 0.4s ease;
+            font-size: 1rem;
+            color: #333;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .accordion-content p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .accordion-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .summary-box {
+            background-color: #fffbe6;
+            border-left: 5px solid #ffbb00;
+            margin: 15px 0;
+            padding: 15px 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #666;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background-color: #000;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav role="navigation" aria-label="Menú principal">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="../index.html">
+                        <img class="logo-nav" src="../img/logo-nexo.svg" alt="Logo Nexo Mentor AI" />
+                    </a>
+                </li>
+                <section class="menus">
+                    <li class="nav-item dropdown">
+                        <button aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">MENÚ ▾</button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../index.html" role="menuitem">INICIO</a></li>
+                            <li><a href="../pages/modulos.html" role="menuitem">MÓDULOS</a></li>
+                            <li><a href="../pages/simulacion.html" role="menuitem">SIMULADOR</a></li>
+                            <li><a href="../pages/inicio-sesion.html" role="menuitem">INICIO DE SESIÓN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">EXPLORER ▾</button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../pages/llm.html" role="menuitem">LLM</a></li>
+                            <li><a href="../pages/recursos.html" role="menuitem">RECURSOS</a></li>
+                        </ul>
+                    </li>
+                </section>
+                <li class="nav-item search-item">
+                    <form id="barra-busqueda" role="search">
+                        <input type="search" placeholder="Buscar..." aria-label="Buscar" />
+                        <button type="submit" id="lupa-barra-busqueda" aria-label="Buscar">
+                            <img src="../img/logo-lupa.png" alt="" />
+                        </button>
+                    </form>
+                </li>
+                <li class="nav-item icons-item">
+                    <a href="#" aria-label="Cuenta de usuario">
+                        <img class="logo-nav" src="../img/logo-usuario.png" alt="Icono cuenta" />
+                    </a>
+                    <a href="#" aria-label="Tareas">
+                        <img class="logo-nav" src="../img/tareas.svg" alt="Icono tareas" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="text-align:center; margin-top: 40px;">Módulos de Aprendizaje</h1>
+
+        <section class="accordion" aria-label="Lista de módulos">
+            <article class="accordion-item">
+                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo1-content"
+                    id="modulo1-header">Módulo 1: Introducción a LLM</h2>
+                <div class="accordion-content" id="modulo1-content" role="region" aria-labelledby="modulo1-header">
+                    <p>Este módulo cubre los conceptos básicos y el funcionamiento general de los Modelos de Lenguaje
+                        de Gran Escala.</p>
+                    <div class="summary-box">
+                        Conceptos clave: Definición, alcances, historia y aplicaciones actuales.
+                    </div>
+                    <img src="../img/modulo1.png" alt="Ilustración Introducción a LLM" />
+                    <p>Incluye estudios de caso simples y ejercicios para familiarizarse con la terminología.</p>
+                    <a href="../pages/simulacion.html" class="btn-secondary">Ir a Simulador</a>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo2-content"
+                    id="modulo2-header">Módulo 2: Técnicas de Entrenamiento</h2>
+                <div class="accordion-content" id="modulo2-content" role="region" aria-labelledby="modulo2-header">
+                    <p>Profundizamos en algoritmos, datasets y metodologías para entrenar modelos de lenguaje.</p>
+                    <div class="summary-box">
+                        Aspectos tratados: Aprendizaje supervisado, fine-tuning y validación de modelos.
+                    </div>
+                    <img src="../img/modulo2.png" alt="Gráfica técnicas de entrenamiento" />
+                    <p>Incluye enlaces a recursos avanzados y papers recomendados.</p>
+                    <a href="../pages/recursos.html" class="btn-secondary">Ver Recursos</a>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo3-content"
+                    id="modulo3-header">Módulo 3: Simulación y Uso Práctico</h2>
+                <div class="accordion-content" id="modulo3-content" role="region" aria-labelledby="modulo3-header">
+                    <p>Se exploran herramientas prácticas y simuladores para experimentar con modelos en vivo.</p>
+                    <div class="summary-box">
+                        Actividades: Pruebas de generación de texto y análisis de resultados.
+                    </div>
+                    <img src="../img/modulo3.png" alt="Simulación práctica" />
+                    <p>Se fomenta la experimentación para reforzar el aprendizaje.</p>
+                    <a href="../pages/simulacion.html" class="btn-secondary">Acceder al Simulador</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        // Script para el acordeón interactivo mejorado
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const expanded = header.getAttribute('aria-expanded') === 'true';
+                header.setAttribute('aria-expanded', !expanded);
+                header.classList.toggle('active');
+                const content = header.nextElementSibling;
+                if (!expanded) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+
+            // Permitir abrir/cerrar con teclado (Enter, Space)
+            header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    header.click();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

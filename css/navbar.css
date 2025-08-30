@@ -1,95 +1,162 @@
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
     margin: 0;
     padding: 0;
 }
 
-.cabecera > ul {
-    height: 50px;
+nav {
+    background-color: #ffbb00;
+    padding: 0 20px;
 }
 
-nav ul {
+.nav-list {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #ffbb00
+    height: 60px;
+    list-style: none;
+    justify-content: space-between;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.nav-logo a {
+    display: flex;
+    align-items: center;
 }
 
 .logo-nav {
     width: 50px;
     height: 50px;
-    padding: 10px;
 }
 
-.menu:hover {
-    cursor: pointer;
-}
-
-#barra-busqueda {
+.menus {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid #000;
-    margin: 0;
+    flex-direction: row;
 }
 
-#barra-busqueda input, select {
-    height: 30px;
+.nav-item {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
     border: none;
-    font-size: 0.9rem;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #000;
+    transition: background-color 0.3s ease;
+    user-select: none;
 }
 
-input:focus, select:focus {
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    background-color: rgba(0, 0, 0, 0.1);
     outline: none;
 }
 
-#lupa-barra-busqueda {
-    width: 20px;
-    height: 20px;
-}
-
-#lupa-barra-busqueda:active {
-    background-color: red;
-}
-
-/* ==== MENÚS DESPLEGABLES ==== */
-
-.menu {
-    height: inherit;
-    position: relative;
-    padding: 0 20px;
-    background-color: red;
-}
-
-.menu > a {
-    margin-top: 10;
-}
-
-.menu-desplegable {
+.dropdown-menu {
     display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    z-index: 1000;
+    list-style-type: none;
 }
 
-.menu-desplegable > li {
-    padding: 10px;
+.dropdown-menu li {
+    padding: 0;
 }
 
-li > a {
-    text-decoration: none;
-}
-
-.menu:hover .menu-desplegable {
+.dropdown-menu li a {
     display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+    background-color: #ffbb00;
+    color: #000;
+    outline: none;
+}
+
+.search-item form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 2px solid #000;
+}
+
+.search-item input[type="search"] {
+    border: none;
+    font-size: 1rem;
+    height: 30px;
+    width: 150px;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.search-item input[type="search"]:focus {
+    outline: 2px solid #ffbb00;
+}
+
+#lupa-barra-busqueda {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#lupa-barra-busqueda img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+/* Íconos usuario y tareas */
+.icons-item a {
+    margin-left: 15px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.icons-item .logo-nav {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+}
+
+.icons-item a:hover .logo-nav {
+    transform: scale(1.1);
+}
+
+/* Mostrar dropdown al hacer hover en escritorio */
+@media (hover: hover) and (pointer: fine) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Responsive básico */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 10px;
+        height: auto;
+    }
+    .search-item input[type="search"] {
+        width: 100px;
+    }
 }

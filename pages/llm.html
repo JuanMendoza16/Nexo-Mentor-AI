@@ -1,51 +1,173 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexoMentorAI</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simulador - NexoMentorAI</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+        main {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 0 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #simulator {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #f7f7f7;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus {
+            border-color: #ffbb00;
+            outline: none;
+        }
+
+        button {
+            background-color: #ffbb00;
+            border: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover,
+        button:focus {
+            background-color: #d6a500;
+            outline: none;
+        }
+
+        #responseArea {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 100px;
+            font-size: 1rem;
+            color: #333;
+            white-space: pre-wrap;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #statusMessage {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+            height: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <nav class="cabecera">
-            <ul>
-                <li class="elementos">
-                    <img class="logo-nav" src="../img/logo-nexo.svg" alt="logo-nexo-mentor-ai" srcset="">
+        <nav role="navigation" aria-label="Menú principal">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="../index.html">
+                        <img class="logo-nav" src="../img/logo-nexo.svg" alt="Logo Nexo Mentor AI" />
+                    </a>
                 </li>
-                <li class="menu">
-                    <a href="">MENÚ</a>
-                    <ul class="menu-desplegable">
-                        <li><a href="../index.html">INICIO</a></li>
-                        <li><a href="">opcion2</a></li>
-                    </ul>
-                </li>
-                <li class="menu">
-                    <a href="">EXPLORER</a>
-                    <ul  class="menu-desplegable">
-                        <li><a href="llm.html">LLM</a></li>
-                        <li><a href="recursos.html">RECURSOS</a></li>
-                    </ul>
-                </li>
-                <li class="elementos">
-                    <form id="barra-busqueda">
-                        <input type="text" placeholder="Buscar...">
-                        <img id="lupa-barra-busqueda" src="../img/logo-lupa.png" alt="lupa" srcset="">
+                <section class="menus">
+                    <li class="nav-item dropdown">
+                        <button aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">MENÚ ▾</button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../index.html" role="menuitem">INICIO</a></li>
+                            <li><a href="../pages/modulos.html" role="menuitem">MÓDULOS</a></li>
+                            <li><a href="../pages/simulacion.html" role="menuitem">SIMULADOR</a></li>
+                            <li><a href="../pages/inicio-sesion.html" role="menuitem">INICIO DE SESIÓN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">EXPLORER ▾</button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../pages/llm.html" role="menuitem">LLM</a></li>
+                            <li><a href="../pages/recursos.html" role="menuitem">RECURSOS</a></li>
+                        </ul>
+                    </li>
+                </section>
+                <li class="nav-item search-item">
+                    <form id="barra-busqueda" role="search">
+                        <input type="search" placeholder="Buscar..." aria-label="Buscar" />
+                        <button type="submit" id="lupa-barra-busqueda" aria-label="Buscar">
+                            <img src="../img/logo-lupa.png" alt="" />
+                        </button>
                     </form>
                 </li>
-                <li class="elementos">
-                    <img class="logo-nav" src="../img/logo-usuario.png" alt="cuenta" srcset="">
-                    <img class="logo-nav" src="../img/tareas.svg" alt="tareas" srcset="">
+                <li class="nav-item icons-item">
+                    <a href="#" aria-label="Cuenta de usuario">
+                        <img class="logo-nav" src="../img/logo-usuario.png" alt="Icono cuenta" />
+                    </a>
+                    <a href="#" aria-label="Tareas">
+                        <img class="logo-nav" src="../img/tareas.svg" alt="Icono tareas" />
+                    </a>
                 </li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h1>
-            LLM
-        </h1>
+        <h1>Simulador de Modelos de Lenguaje</h1>
+
+        <section id="simulator" aria-label="Simulador interactivo de LLM">
+            <label for="userInput">Escribe tu consulta o texto para simular:</label>
+            <textarea id="userInput" placeholder="Introduce tu texto aquí..." aria-multiline="true"></textarea>
+            <button id="simulateBtn">Simular</button>
+            <div id="statusMessage" aria-live="polite"></div>
+            <div id="responseArea" tabindex="0" aria-live="polite" aria-label="Respuesta del simulador"></div>
+        </section>
     </main>
+
+    <script>
+        const simulateBtn = document.getElementById('simulateBtn');
+        const userInput = document.getElementById('userInput');
+        const responseArea = document.getElementById('responseArea');
+        const statusMessage = document.getElementById('statusMessage');
+
+        simulateBtn.addEventListener('click', () => {
+            const inputText = userInput.value.trim();
+            if (!inputText) {
+                statusMessage.textContent = "Por favor, ingresa un texto para simular.";
+                return;
+            }
+
+            statusMessage.textContent = "Simulando respuesta...";
+            responseArea.textContent = '';
+
+            // Simulación de retraso para mostrar "procesando"
+            setTimeout(() => {
+                // Simulación simple de respuesta (aquí implementarías la lógica real o llamada API)
+                const simulatedResponse = `Respuesta simulada para:\n${inputText}\n\nEsta es una respuesta generada por NexoMentorAI.`;
+                responseArea.textContent = simulatedResponse;
+                statusMessage.textContent = "Simulación completada.";
+            }, 1500);
+        });
+    </script>
 </body>
 
 </html>

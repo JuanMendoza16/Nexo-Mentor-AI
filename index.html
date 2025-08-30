@@ -1,55 +1,142 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NexoMentorAI</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
     <header>
-        <nav class="cabecera">
-            <ul>
-                <li class="elementos">
-                    <img class="logo-nav" src="img/logo-nexo.svg" alt="logo-nexo-mentor-ai" srcset="">
+        <nav role="navigation" aria-label="Menú principal">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="index.html">
+                        <img class="logo-nav" src="img/logo-nexo.svg" alt="Logo Nexo Mentor AI" />
+                    </a>
                 </li>
-                <li class="menu">
-                    <a href="">MENÚ</a>
-                    <ul class="menu-desplegable">
-                        <li><a href="index.html">INICIO</a></li>
-                        <li><a href="pages/modulos.html">MÓDULOS</a></li>
-                        <li><a href="pages/simulador.html">SIMULADOR</a></li>
-                    </ul>
-                </li>
-                <li class="menu">
-                    <a href="">EXPLORER</a>
-                    <ul  class="menu-desplegable">
-                        <li><a href="pages/llm.html">LLM</a></li>
-                        <li><a href="pages/recursos.html">RECURSOS</a></li>
-                    </ul>
-                </li>
-                <li class="elementos">
-                    <form id="barra-busqueda">
-                        <input type="text" placeholder="Buscar...">
-                        <img id="lupa-barra-busqueda" src="img/logo-lupa.png" alt="lupa" srcset="">
+                <section class="menus">
+                    <li class="nav-item dropdown">
+                        <button aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">MENÚ ▾</button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="index.html" role="menuitem">INICIO</a></li>
+                            <li><a href="pages/modulos.html" role="menuitem">MÓDULOS</a></li>
+                            <li><a href="pages/simulacion.html" role="menuitem">SIMULADOR</a></li>
+                            <li><a href="pages/inicio-sesion.html" role="menuitem">INICIO DE SESIÓN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">EXPLORER ▾</button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="pages/llm.html" role="menuitem">LLM</a></li>
+                            <li><a href="pages/recursos.html" role="menuitem">RECURSOS</a></li>
+                        </ul>
+                    </li>
+                </section>
+                <li class="nav-item search-item">
+                    <form id="barra-busqueda" role="search">
+                        <input type="search" placeholder="Buscar..." aria-label="Buscar" />
+                        <button type="submit" id="lupa-barra-busqueda" aria-label="Buscar">
+                            <img src="img/logo-lupa.png" alt="" />
+                        </button>
                     </form>
                 </li>
-                <li class="elementos">
-                    <img class="logo-nav" src="img/logo-usuario.png" alt="cuenta" srcset="">
-                    <img class="logo-nav" src="img/tareas.svg" alt="tareas" srcset="">
+                <li class="nav-item icons-item">
+                    <a href="#" aria-label="Cuenta de usuario">
+                        <img class="logo-nav" src="img/logo-usuario.png" alt="Icono cuenta" />
+                    </a>
+                    <a href="#" aria-label="Tareas">
+                        <img class="logo-nav" src="img/tareas.svg" alt="Icono tareas" />
+                    </a>
                 </li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h1>
-            Bienvenidos a nuestra web
-        </h1>
-        <p>
-            Aquí aprenderán lo que quieran saber sobre LLM
-        </p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenidos a NexoMentorAI</h1>
+                <p>Aprende todo sobre Modelos de Lenguaje de Gran Escala (LLM) con nuestra plataforma interactiva.</p>
+                <a href="pages/modulos.html" class="btn-primary">Explorar Módulos</a>
+            </div>
+        </section>
+
+        <!-- Módulos Destacados -->
+        <section class="features">
+            <h2>Módulos Destacados</h2>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <img src="img/icono1.svg" alt="Icono Módulo 1" />
+                    <h3>Introducción a LLM</h3>
+                    <p>Comprende los conceptos básicos de los Modelos de Lenguaje de Gran Escala y sus aplicaciones.</p>
+                </article>
+                <article class="feature-card">
+                    <img src="img/icono2.svg" alt="Icono Módulo 2" />
+                    <h3>Simulador Interactivo</h3>
+                    <p>Practica y experimenta con modelos generativos en nuestra herramienta de simulación.</p>
+                </article>
+                <article class="feature-card">
+                    <img src="img/icono3.svg" alt="Icono Módulo 3" />
+                    <h3>Recursos y Comunidad</h3>
+                    <p>Accede a materiales, tutoriales y participa en foros con expertos y usuarios.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Beneficios o Recursos -->
+        <section class="resources">
+            <h2>¿Por qué elegir NexoMentorAI?</h2>
+            <ul class="resource-list">
+                <li>Contenido actualizado y en constante expansión.</li>
+                <li>Interactividad y simulación para un aprendizaje práctico.</li>
+                <li>Soporte y comunidad en crecimiento.</li>
+            </ul>
+            <a href="pages/inicio-sesion.html" class="btn-secondary">Inicia sesión para comenzar</a>
+        </section>
     </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 NexoMentorAI | Contacto: contacto@nexomentorai.com</p>
+            <nav aria-label="Enlaces de pie de página">
+                <ul class="footer-links">
+                    <li><a href="pages/llm.html">LLM</a></li>
+                    <li><a href="pages/recursos.html">Recursos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Pequeño script para accesibilidad del dropdown
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+                button.setAttribute('aria-expanded', !expanded);
+                const menu = button.nextElementSibling;
+                if (menu) {
+                    menu.style.display = expanded ? 'none' : 'block';
+                }
+            });
+        });
+
+        // Cerrar dropdowns si se hace click fuera
+        document.addEventListener('click', e => {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-toggle').forEach(button => {
+                    button.setAttribute('aria-expanded', 'false');
+                    if (button.nextElementSibling)
+                        button.nextElementSibling.style.display = 'none';
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

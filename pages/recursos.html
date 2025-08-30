@@ -1,51 +1,274 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexoMentorAI</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recursos - NexoMentorAI</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        section.resource-category {
+            margin-bottom: 50px;
+        }
+
+        section.resource-category h2 {
+            border-bottom: 3px solid #ffbb00;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        ul.resource-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        ul.resource-list li {
+            background-color: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        ul.resource-list li h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        ul.resource-list li p {
+            flex-grow: 1;
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        ul.resource-list li a {
+            align-self: flex-start;
+            font-weight: 700;
+            color: #ffbb00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border: 2px solid #ffbb00;
+            padding: 8px 16px;
+            border-radius: 25px;
+        }
+
+        ul.resource-list li a:hover,
+        ul.resource-list li a:focus {
+            color: #000;
+            background-color: #ffbb00;
+            outline: none;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <nav class="cabecera">
-            <ul>
-                <li class="elementos">
-                    <img class="logo-nav" src="../img/logo-nexo.svg" alt="logo-nexo-mentor-ai" srcset="">
+        <nav role="navigation" aria-label="Menú principal">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="../index.html">
+                        <img class="logo-nav" src="../img/logo-nexo.svg" alt="Logo Nexo Mentor AI" />
+                    </a>
                 </li>
-                <li class="menu">
-                    <a href="">MENÚ</a>
-                    <ul class="menu-desplegable">
-                        <li><a href="../index.html">INICIO</a></li>
-                        <li><a href="">opcion2</a></li>
-                    </ul>
-                </li>
-                <li class="menu">
-                    <a href="">EXPLORER</a>
-                    <ul  class="menu-desplegable">
-                        <li><a href="llm.html">LLM</a></li>
-                        <li><a href="recursos.html">RECURSOS</a></li>
-                    </ul>
-                </li>
-                <li class="elementos">
-                    <form id="barra-busqueda">
-                        <input type="text" placeholder="Buscar...">
-                        <img id="lupa-barra-busqueda" src="../img/logo-lupa.png" alt="lupa" srcset="">
+                <section class="menus">
+                    <li class="nav-item dropdown">
+                        <button aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">MENÚ ▾</button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../index.html" role="menuitem">INICIO</a></li>
+                            <li><a href="../pages/modulos.html" role="menuitem">MÓDULOS</a></li>
+                            <li><a href="../pages/simulacion.html" role="menuitem">SIMULADOR</a></li>
+                            <li><a href="../pages/inicio-sesion.html" role="menuitem">INICIO DE SESIÓN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">EXPLORER ▾</button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../pages/llm.html" role="menuitem">LLM</a></li>
+                            <li><a href="../pages/recursos.html" role="menuitem">RECURSOS</a></li>
+                        </ul>
+                    </li>
+                </section>
+                <li class="nav-item search-item">
+                    <form id="barra-busqueda" role="search" onsubmit="return false;">
+                        <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar" />
+                        <button type="submit" id="lupa-barra-busqueda" aria-label="Buscar">
+                            <img src="../img/logo-lupa.png" alt="Buscar" />
+                        </button>
                     </form>
                 </li>
-                <li class="elementos">
-                    <img class="logo-nav" src="../img/logo-usuario.png" alt="cuenta" srcset="">
-                    <img class="logo-nav" src="../img/tareas.svg" alt="tareas" srcset="">
+                <li class="nav-item icons-item">
+                    <a href="#" aria-label="Cuenta de usuario">
+                        <img class="logo-nav" src="../img/logo-usuario.png" alt="Icono cuenta" />
+                    </a>
+                    <a href="#" aria-label="Tareas">
+                        <img class="logo-nav" src="../img/tareas.svg" alt="Icono tareas" />
+                    </a>
                 </li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h1>
-            RECURSOS
-        </h1>
+        <h1>Recursos Educativos</h1>
+
+        <!-- Filtros -->
+        <section class="filters" aria-label="Filtros de recursos" style="max-width:900px; margin: 20px auto 40px;">
+            <fieldset>
+                <legend>Filtrar por tipo de recurso:</legend>
+                <label><input type="checkbox" class="filter-checkbox" value="video" checked /> Videos</label>
+                <label><input type="checkbox" class="filter-checkbox" value="documento" checked /> Documentos</label>
+                <label><input type="checkbox" class="filter-checkbox" value="simulador" checked /> Simuladores</label>
+            </fieldset>
+        </section>
+
+        <section class="resource-list" aria-live="polite" aria-atomic="true" style="max-width: 900px; margin: 0 auto;">
+            <article class="resource-item" data-type="video" tabindex="0">
+                <h2>Introducción a Modelos de Lenguaje</h2>
+                <p>Video explicativo con los conceptos básicos, historia y aplicaciones.</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Ver Video</a>
+            </article>
+            <article class="resource-item" data-type="video" tabindex="0">
+                <h2>Técnicas Avanzadas de Entrenamiento</h2>
+                <p>Video tutorial con ejemplos prácticos y demostraciones.</p>
+                <a href="https://www.youtube.com/watch?v=abcd1234" target="_blank" rel="noopener noreferrer">Ver Video</a>
+            </article>
+            <article class="resource-item" data-type="documento" tabindex="0">
+                <h2>Manual Básico de LLM</h2>
+                <p>Documento PDF con introducción teórica y ejemplos de código.</p>
+                <a href="../docs/manual-basico-llm.pdf" target="_blank" rel="noopener noreferrer">Descargar</a>
+            </article>
+            <article class="resource-item" data-type="documento" tabindex="0">
+                <h2>Paper: Entrenamiento de Modelos</h2>
+                <p>Artículo científico sobre métodos y datasets modernos.</p>
+                <a href="https://arxiv.org/pdf/1234.5678.pdf" target="_blank" rel="noopener noreferrer">Leer en línea</a>
+            </article>
+            <article class="resource-item" data-type="simulador" tabindex="0">
+                <h2>Simulador de Texto GPT</h2>
+                <p>Interactúa con un modelo GPT para probar generación de texto en tiempo real.</p>
+                <a href="../pages/simulacion.html">Probar Ahora</a>
+            </article>
+            <article class="resource-item" data-type="simulador" tabindex="0">
+                <h2>Analizador de Sentimientos</h2>
+                <p>Herramienta para analizar y clasificar texto según el sentimiento expresado.</p>
+                <a href="https://herramienta-externa.com" target="_blank" rel="noopener noreferrer">Visitar Herramienta</a>
+            </article>
+        </section>
     </main>
+
+    <script>
+        // Función para filtrar recursos según búsqueda y filtros seleccionados
+        const searchInput = document.getElementById('searchInput');
+        const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+        const resourceItems = document.querySelectorAll('.resource-item');
+
+        function filterResources() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const activeFilters = Array.from(filterCheckboxes)
+                .filter(chk => chk.checked)
+                .map(chk => chk.value);
+
+            resourceItems.forEach(item => {
+                const type = item.getAttribute('data-type');
+                const title = item.querySelector('h2').textContent.toLowerCase();
+                const description = item.querySelector('p').textContent.toLowerCase();
+
+                const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+                const matchesFilter = activeFilters.includes(type);
+
+                if (matchesSearch && matchesFilter) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterResources);
+        filterCheckboxes.forEach(chk => chk.addEventListener('change', filterResources));
+    </script>
+
+
+    <main>
+        <h1>Recursos Educativos</h1>
+
+        <section class="resource-category" aria-labelledby="videos-title">
+            <h2 id="videos-title">Videos Educativos</h2>
+            <ul class="resource-list">
+                <li>
+                    <h3>Introducción a Modelos de Lenguaje</h3>
+                    <p>Video explicativo con los conceptos básicos, historia y aplicaciones.</p>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Ver
+                        Video</a>
+                </li>
+                <li>
+                    <h3>Técnicas Avanzadas de Entrenamiento</h3>
+                    <p>Video tutorial con ejemplos prácticos y demostraciones.</p>
+                    <a href="https://www.youtube.com/watch?v=abcd1234" target="_blank" rel="noopener noreferrer">Ver
+                        Video</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="resource-category" aria-labelledby="documentos-title">
+            <h2 id="documentos-title">Documentos y Lecturas</h2>
+            <ul class="resource-list">
+                <li>
+                    <h3>Manual Básico de LLM</h3>
+                    <p>Documento PDF con introducción teórica y ejemplos de código.</p>
+                    <a href="../docs/manual-basico-llm.pdf" target="_blank" rel="noopener noreferrer">Descargar</a>
+                </li>
+                <li>
+                    <h3>Paper: Entrenamiento de Modelos</h3>
+                    <p>Artículo científico sobre métodos y datasets modernos.</p>
+                    <a href="https://arxiv.org/pdf/1234.5678.pdf" target="_blank" rel="noopener noreferrer">Leer en línea</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="resource-category" aria-labelledby="simuladores-title">
+            <h2 id="simuladores-title">Simuladores y Herramientas</h2>
+            <ul class="resource-list">
+                <li>
+                    <h3>Simulador de Texto GPT</h3>
+                    <p>Interactúa con un modelo GPT para probar generación de texto en tiempo real.</p>
+                    <a href="../pages/simulacion.html">Probar Ahora</a>
+                </li>
+                <li>
+                    <h3>Analizador de Sentimientos</h3>
+                    <p>Herramienta para analizar y clasificar texto según el sentimiento expresado.</p>
+                    <a href="https://herramienta-externa.com" target="_blank" rel="noopener noreferrer">Visitar Herramienta</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="max-width:1000px; margin: 0 auto; padding: 20px 0; text-align:center; color:#666; font-size:0.9rem;">
+            <p>© 2025 NexoMentorAI | contacto@nexomentorai.com</p>
+        </div>
+    </footer>
 </body>
 
 </html>
