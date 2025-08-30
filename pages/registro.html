@@ -61,6 +61,12 @@
         <div class="container" role="main" aria-label="Formulario de inicio de sesión y registro">
             <h2 id="formTitle">Iniciar Sesión</h2>
 
+            <!-- Botón de iniciar con Google -->
+            <div style="margin-bottom: 30px; text-align: center;">
+                <div id="g_id_signin" data-type="standard" data-theme="outline" data-size="large" data-text="signin_with"
+                    data-shape="rectangular" data-logo_alignment="left"></div>
+            </div>
+
             <form id="loginForm" class="active" aria-labelledby="formTitle" novalidate>
                 <label for="loginEmail">Correo electrónico</label>
                 <input type="email" id="loginEmail" name="loginEmail" required autocomplete="email" />
@@ -97,12 +103,6 @@
                 ¿Ya tienes cuenta?
                 <button id="switchToLogin" aria-controls="loginForm" aria-expanded="true">Inicia sesión</button>
             </p>
-
-            <!-- Botón de iniciar con Google -->
-            <div style="margin-top: 30px; text-align: center;">
-                <div id="g_id_signin" data-type="standard" data-theme="outline" data-size="large" data-text="signin_with"
-                    data-shape="rectangular" data-logo_alignment="left"></div>
-            </div>
         </div>
     </main>
 
