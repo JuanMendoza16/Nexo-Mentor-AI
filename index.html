@@ -45,10 +45,10 @@
                     </form>
                 </li>
                 <li class="nav-item icons-item">
-                    <a href="#" aria-label="Cuenta de usuario">
+                    <a href="pages/inicio-sesion.html" aria-label="Cuenta de usuario">
                         <img class="logo-nav" src="img/logo-usuario.png" alt="Icono cuenta" />
                     </a>
-                    <a href="#" aria-label="Tareas">
+                    <a href="pages/modules.html" aria-label="Tareas">
                         <img class="logo-nav" src="img/tareas.svg" alt="Icono tareas" />
                     </a>
                 </li>
@@ -113,30 +113,7 @@
         </div>
     </footer>
 
-    <script>
-        // Pequeño script para accesibilidad del dropdown
-        document.querySelectorAll('.dropdown-toggle').forEach(button => {
-            button.addEventListener('click', () => {
-                const expanded = button.getAttribute('aria-expanded') === 'true' || false;
-                button.setAttribute('aria-expanded', !expanded);
-                const menu = button.nextElementSibling;
-                if (menu) {
-                    menu.style.display = expanded ? 'none' : 'block';
-                }
-            });
-        });
-
-        // Cerrar dropdowns si se hace click fuera
-        document.addEventListener('click', e => {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown-toggle').forEach(button => {
-                    button.setAttribute('aria-expanded', 'false');
-                    if (button.nextElementSibling)
-                        button.nextElementSibling.style.display = 'none';
-                });
-            }
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

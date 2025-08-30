@@ -1,0 +1,109 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    max-width: 400px;
+    width: 90%;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+form {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+form.active {
+    display: flex;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: block;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ffbb00;
+    outline: none;
+}
+
+button.submit-btn {
+    background-color: #ffbb00;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 0;
+    color: black;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover,
+button.submit-btn:focus {
+    background-color: #d6a500;
+    outline: none;
+}
+
+.switcher {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.switcher button {
+    background: none;
+    border: none;
+    font-weight: 700;
+    color: #ffbb00;
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.switcher button:hover,
+.switcher button:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin: 0;
+    padding: 0 0 0 5px;
+    height: 18px;
+}
