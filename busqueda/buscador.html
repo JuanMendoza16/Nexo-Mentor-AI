@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        .search-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .results-list {
+            margin-top: 10px;
+            padding-left: 0;
+            list-style-type: none;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .results-list li {
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        .no-results {
+            font-size: 20px;
+            color: #666;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="buscar país" />
+        <ul id="resultsList" class="results-list"></ul>
+        <p id="noResults" class="no-results">No se encontraron resultados.</p>
+    </div>
+    <script>
+        const countries = [
+            { name: "Argentina" },
+            { name: "Bolivia" },
+            { name: "Brasil" },
+            { name: "Chile" },
+            { name: "Colombia" },
+            { name: "Ecuandor" },
+            { name: "Mexico" },
+            { name: "Panama" },
+            { name: "Paraguay" },
+            { name: "Peru" },
+            { name: "Uruguay" },
+            { name: "Venezuela" },
+        ];
+
+        const searchInput = document.getElementById("searchInput");
+        const resultList = document.getElementById("resultsList");
+        const noResults = document.getElementById("noResults");
+
+        const handleSearch = () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredCountries = countries.filter((country) => country.name.toLowerCase().startsWith(searchTerm));
+
+            resultList.innerHTML = "";
+
+            if (filteredCountries.length === 0) {
+                noResults.style.display = "block";
+            } else {
+                let n = 0;
+                filteredCountries.forEach((country) => {
+                    const li = document.createElement("li");
+                    li.textContent = country.name;
+                    resultList.appendChild(li);
+
+                    console.log(n += 1);
+
+                });
+                noResults.style.display = "none";
+            }
+
+            if (searchInput.value === "") {
+                resultList.innerHTML = "";
+            }
+        };
+
+        searchInput.addEventListener("input", handleSearch);
+    </script>
+</body>
+
+</html>

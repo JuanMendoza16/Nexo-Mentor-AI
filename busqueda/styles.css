@@ -1,0 +1,46 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    height: 100%;
+}
+
+.main {
+    width: 50rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.main__input {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #ccc;
+    outline: none;
+    margin-bottom: 3rem;
+}
+
+.main__input:focus {
+    border-color: #800080; /* color púrpura */
+}
+
+.main__text {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.text__search {
+    background-color: #800080;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    color: white;
+}
