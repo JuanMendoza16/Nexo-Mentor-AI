@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Módulos - NexoMentorAI</title>
     <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/modulos.css" />
+    <link rel="stylesheet" href="../css/modules.css" />
 </head>
 
 <body>
@@ -25,8 +24,8 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="../index.html" role="menuitem">INICIO</a></li>
                             <li><a href="../pages/modulos.html" role="menuitem">MÓDULOS</a></li>
-                            <li><a href="../pages/simulacion.html" role="menuitem">SIMULADOR</a></li>
-                            <li><a href="../pages/registro.html" role="menuitem">INICIO DE SESIÓN</a></li>
+                            <!-- <li><a href="../pages/simulacion.html" role="menuitem">SIMULADOR</a></li>
+                            <li><a href="../pages/registro.html" role="menuitem">INICIO DE SESIÓN</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -37,7 +36,7 @@
                         </ul>
                     </li>
                 </section>
-                <li class="nav-item search-item">
+                <!-- <li class="nav-item search-item">
                     <form id="barra-busqueda" role="search">
                         <input type="search" placeholder="Buscar..." aria-label="Buscar" />
                         <button type="submit" id="lupa-barra-busqueda" aria-label="Buscar">
@@ -52,7 +51,7 @@
                     <a href="#" aria-label="Tareas">
                         <img class="logo-nav" src="../img/tareas.svg" alt="Icono tareas" />
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </header>
@@ -62,51 +61,35 @@
 
         <section class="accordion" aria-label="Lista de módulos">
             <article class="accordion-item">
-                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo1-content"
-                    id="modulo1-header">Módulo 1: Introducción a LLM</h2>
+                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo1-content" id="modulo1-header">Módulo 1: Introducción a LLM</h2>
                 <div class="accordion-content" id="modulo1-content" role="region" aria-labelledby="modulo1-header">
-                    <p>Este módulo cubre los conceptos básicos y el funcionamiento general de los Modelos de Lenguaje
-                        de Gran Escala.</p>
-                    <div class="summary-box">
-                        Conceptos clave: Definición, alcances, historia y aplicaciones actuales.
-                    </div>
-                    <img src="../img/modulo1.png" alt="Ilustración Introducción a LLM" />
-                    <p>Incluye estudios de caso simples y ejercicios para familiarizarse con la terminología.</p>
-                    <a href="../pages/simulacion.html" class="btn-secondary">Ir a Simulador</a>
+                    <p>Explicación sobre qué son los Modelos de Lenguaje de Gran Escala, historia, y aplicaciones básicas.</p>
+                    <p>Contenidos incluyen teoría, ejemplos y casos prácticos para comprender conceptos fundamentales.</p>
                 </div>
             </article>
 
             <article class="accordion-item">
-                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo2-content"
-                    id="modulo2-header">Módulo 2: Técnicas de Entrenamiento</h2>
+                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo2-content" id="modulo2-header">Módulo 2: Técnicas de Entrenamiento</h2>
                 <div class="accordion-content" id="modulo2-content" role="region" aria-labelledby="modulo2-header">
-                    <p>Profundizamos en algoritmos, datasets y metodologías para entrenar modelos de lenguaje.</p>
-                    <div class="summary-box">
-                        Aspectos tratados: Aprendizaje supervisado, fine-tuning y validación de modelos.
-                    </div>
-                    <img src="../img/modulo2.png" alt="Gráfica técnicas de entrenamiento" />
-                    <p>Incluye enlaces a recursos avanzados y papers recomendados.</p>
-                    <a href="../pages/recursos.html" class="btn-secondary">Ver Recursos</a>
+                    <p>Detallamos los métodos y arquitecturas usados en el entrenamiento de modelos de lenguaje.</p>
+                    <p>Incluye explicación de datasets, aprendizaje supervisado y transferencia de aprendizaje.</p>
                 </div>
             </article>
 
             <article class="accordion-item">
-                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo3-content"
-                    id="modulo3-header">Módulo 3: Simulación y Uso Práctico</h2>
+                <h2 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="modulo3-content" id="modulo3-header">Módulo 3: Simulación y Uso Práctico</h2>
                 <div class="accordion-content" id="modulo3-content" role="region" aria-labelledby="modulo3-header">
-                    <p>Se exploran herramientas prácticas y simuladores para experimentar con modelos en vivo.</p>
-                    <div class="summary-box">
-                        Actividades: Pruebas de generación de texto y análisis de resultados.
-                    </div>
-                    <img src="../img/modulo3.png" alt="Simulación práctica" />
-                    <p>Se fomenta la experimentación para reforzar el aprendizaje.</p>
-                    <a href="../pages/simulacion.html" class="btn-secondary">Acceder al Simulador</a>
+                    <p>Aprende cómo utilizar simuladores y herramientas para experimentar con LLMs.</p>
+                    <p>Actividades prácticas para implementaciones sencillas y pruebas de generación de texto.</p>
                 </div>
             </article>
+
+            <!-- Puedes agregar más módulos aquí -->
         </section>
     </main>
 
-    <script src="../js/modulos.js"></script>
+    <script src="../js/modules.js"></script>
+    
 </body>
 
 </html>
