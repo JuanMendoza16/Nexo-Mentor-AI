@@ -93,7 +93,7 @@ Estilos modernos con gradientes, tipografía limpia y diseño responsive basado 
 - `/pages/modulos.html` - Pagina de módulos educativos
 - `/pages/recursos.html` - Página de recursos con filtros y búsqueda
 - `/pages/simulacion.html` - Simulador interactivo LLM
-- `/pages/inicio-sesion.html` - Login/Registro con Google Sign-In
+- `/pages/registro.html` - Login/Registro con Google Sign-In
 - `/css/navbar.css` - Estilos para el navbar
 - `/css/styles.css` - Estilos generales y paleta
 - `/img/` - Imágenes de iconos, logo y módulos
@@ -143,5 +143,6 @@ Este proyecto está bajo licencia MIT. Consulta LICENSE.md para más detalles.
 Gracias por contribuir y seguir mejorando NexoMentorAI. ¡Vamos por una educación en IA de calidad!
 
 ---
+
 
 *Archivo generado automáticamente para facilitar futuras continuaciones en el proyecto.*
