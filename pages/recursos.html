@@ -55,11 +55,11 @@
             </ul>
         </nav>
     </header>
-
+<!--
     <main>
         <h1>Recursos Educativos</h1>
 
-        <!-- Filtros -->
+        <!-- Filtros --
         <section class="filters" aria-label="Filtros de recursos" style="max-width:900px; margin: 20px auto 40px;">
             <fieldset>
                 <legend>Filtrar por tipo de recurso:</legend>
@@ -102,17 +102,27 @@
             </article>
         </section>
     </main>
-
-    <!-- <main>
+-->
+    <main>
         <h1>Recursos Educativos</h1>
 
-        <section class="resource-category" aria-labelledby="videos-title">
+        <!-- Filtros -->
+        <section class="filters" aria-label="Filtros de recursos" style="max-width:900px; margin: 20px auto 40px;">
+            <fieldset>
+                <legend>Filtrar por tipo de recurso:</legend>
+                <label><input type="checkbox" class="filter-checkbox" value="video" checked /> Videos</label>
+                <label><input type="checkbox" class="filter-checkbox" value="documento" checked /> Documentos</label>
+                <label><input type="checkbox" class="filter-checkbox" value="simulador" checked /> Simuladores</label>
+            </fieldset>
+        </section>
+
+        <section class="resource-category" data-type="video" aria-labelledby="videos-title">
             <h2 id="videos-title">Videos Educativos</h2>
             <ul class="resource-list">
                 <li>
                     <h3>Introducción a Modelos de Lenguaje</h3>
                     <p>Video explicativo con los conceptos básicos, historia y aplicaciones.</p>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Ver
+                    <a href="https://www.youtube.com/watch?v=abcd1234" target="_blank" rel="noopener noreferrer">Ver
                         Video</a>
                 </li>
                 <li>
@@ -124,7 +134,7 @@
             </ul>
         </section>
 
-        <section class="resource-category" aria-labelledby="documentos-title">
+        <section class="resource-category" data-type="documento" aria-labelledby="documentos-title">
             <h2 id="documentos-title">Documentos y Lecturas</h2>
             <ul class="resource-list">
                 <li>
@@ -140,13 +150,13 @@
             </ul>
         </section>
 
-        <section class="resource-category" aria-labelledby="simuladores-title">
+        <section class="resource-category" data-type="simulador" aria-labelledby="simuladores-title">
             <h2 id="simuladores-title">Simuladores y Herramientas</h2>
             <ul class="resource-list">
                 <li>
                     <h3>Simulador de Texto GPT</h3>
                     <p>Interactúa con un modelo GPT para probar generación de texto en tiempo real.</p>
-                    <a href="../pages/simulacion.html">Probar Ahora</a>
+                    <a href="../pages/llm.html">Probar Ahora</a>
                 </li>
                 <li>
                     <h3>Analizador de Sentimientos</h3>
@@ -157,7 +167,7 @@
         </section>
     </main>
 
-    <footer>
+    <!-- <footer>
         <div class="footer-content" style="max-width:1000px; margin: 0 auto; padding: 20px 0; text-align:center; color:#666; font-size:0.9rem;">
             <p>© 2025 NexoMentorAI | contacto@nexomentorai.com</p>
         </div>
