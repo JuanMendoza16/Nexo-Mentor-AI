@@ -61,6 +61,32 @@
     padding: 30px;
     max-width: 280px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.feature-card a {
+    font-weight: 700;
+    color: #ffbb00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border: 2px solid #ffbb00;
+    padding: 8px 16px;
+    margin-top: 1rem;
+    border-radius: 25px;
+}
+
+.feature-card a:hover,
+.feature-card a:focus {
+    color: #000;
+    background-color: #ffbb00;
+    outline: none;
 }
 
 .feature-card img {
